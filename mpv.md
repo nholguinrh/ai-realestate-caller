@@ -257,12 +257,12 @@ gantt
     dateFormat  YYYY-MM-DD
 
     section Phase 0 — Setup
-    Create Synthflow account             :done, p0a, 2026-04-01, 1d
-    Create Zapier account                :done, p0b, 2026-04-01, 1d
-    Get FUB API key from settings        :done, p0c, 2026-04-01, 1d
+    Create Synthflow account             :done, p0a, 2026-04-13, 1d
+    Create Zapier account                :done, p0b, 2026-04-13, 1d
+    Get FUB API key from settings        :done, p0c, 2026-04-13, 1d
 
     section Phase 1 — Connect the Tools
-    Connect FUB to Zapier                :p1a, 2026-04-08, 2d
+    Connect FUB to Zapier                :p1a, 2026-04-20, 2d
     Connect Synthflow to Zapier          :p1b, after p1a, 2d
     Test FUB trigger fires correctly     :p1c, after p1b, 1d
 
@@ -348,23 +348,6 @@ $375 Synthflow / 1,000 calls = $0.375 per call attempt
 ```
 
 Compare to a human ISA at $15–25/hour making 20–30 calls/hour = **$0.50–$1.25 per call attempt** before salary overhead.
-
----
-
-## Scaling Beyond MVP
-
-When the no-code setup reaches its limits, these are the signals and next steps:
-
-| Signal | Next step |
-|---|---|
-| Call volume exceeds 6,000 min/month | Upgrade to Synthflow Agency plan or evaluate Retell AI |
-| Need custom retry logic or multi-property routing | Introduce a lightweight FastAPI backend on EC2 |
-| Need custom reporting beyond Synthflow dashboard | Connect Google Looker Studio or Metabase |
-| Need calls in French or Spanish | Already supported — add a second Synthflow agent |
-| Agents need to join calls live | Enable Synthflow warm transfer to human agent |
-| Reselling to other brokerages | Synthflow Agency plan supports unlimited white-label sub-accounts |
-
-The no-code MVP is designed to validate the system and prove call-to-showing conversion before investing in infrastructure. Once the numbers are real, a developer can build Version 1 on top of a tested script and a working workflow.
 
 ---
 
