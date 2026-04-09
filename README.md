@@ -246,27 +246,30 @@ All calls authenticated via FUB API key in `Authorization: Bearer` header.
 
 ```mermaid
 gantt
-    title AI Real Estate Calling System — Build Phases
+    title AI Real Estate Calling System — MVP Build Phases
     dateFormat  YYYY-MM-DD
+
     section Phase 0 — Foundations
     Choose CRM & voice platform          :done, p0a, 2026-04-01, 7d
-    Choose orchestration language        :done, p0b, 2026-04-01, 7d
-    Set up GitHub repo + branch strategy :done, p0c, 2026-04-05, 3d
+    Set up GitHub repo + branch strategy :done, p0b, 2026-04-05, 3d
+
     section Phase 1 — Core Infrastructure
     EC2 + Fedora 41 + Podman setup       :active, p1a, 2026-04-08, 5d
     Podman Compose (api, worker, redis)  :p1b, after p1a, 5d
     CRM adapter interface + FUB adapter  :p1c, after p1a, 7d
     Zapier outbound trigger Zap          :p1d, after p1c, 3d
     Zapier return / writeback Zap        :p1e, after p1d, 3d
-    section Phase 2 — AI Voice Agent
-    Voice platform account + API keys    :p2a, after p1e, 2d
-    Agent prompt design + testing        :p2b, after p2a, 5d
-    ElevenLabs / Qwen3-TTS voice config  :p2c, after p2a, 3d
-    Call flow: intro pitch objections CTA:p2d, after p2b, 5d
+
+    section Phase 2 — Voice Agent
+    Voice platform account + API keys   :p2a, after p1e, 2d
+    Agent prompt design + testing       :p2b, after p2a, 5d
+    Call flow: intro pitch objections CTA :p2c, after p2b, 5d
+
     section Phase 3 — Automation & Scheduling
-    Campaign scheduler + time-zone check :p3a, after p2d, 5d
+    Campaign scheduler + time-zone check :p3a, after p2c, 5d
     Retry logic + voicemail detection    :p3b, after p3a, 3d
     Call volume dashboard                :p3c, after p3b, 5d
+
     section Phase 4 — Compliance & Polish
     CRTC / TCPA compliance layer         :p4a, after p3c, 5d
     National DNC registry scrub          :p4b, after p4a, 3d
